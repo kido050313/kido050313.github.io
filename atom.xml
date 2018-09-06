@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>kido</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-09-04T10:46:17.229Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>kido</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my first blog</title>
+    <link href="http://yoursite.com/2018/09/03/my-first-blog/"/>
+    <id>http://yoursite.com/2018/09/03/my-first-blog/</id>
+    <published>2018-09-03T10:12:54.000Z</published>
+    <updated>2018-09-04T10:46:17.229Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><center>Welcome to <a href="https://kido050313.github.io/" target="_blank" rel="noopener">my blog</a>! This is my blog.</center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+      <category term="kido" scheme="http://yoursite.com/tags/kido/"/>
+    
+  </entry>
+  
+</feed>
