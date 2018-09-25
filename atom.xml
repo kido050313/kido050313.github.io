@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-04T10:46:17.229Z</updated>
+  <updated>2018-09-11T11:29:11.151Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/09/03/my-first-blog/"/>
     <id>http://yoursite.com/2018/09/03/my-first-blog/</id>
     <published>2018-09-03T10:12:54.000Z</published>
-    <updated>2018-09-04T10:46:17.229Z</updated>
+    <updated>2018-09-11T11:29:11.151Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><center>Welcome to <a href="https://kido050313.github.io/" target="_blank" rel="noopener">my blog</a>! This is my blog.</center>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="如何将本地项目上传到github上"><a href="#如何将本地项目上传到github上" class="headerlink" title="如何将本地项目上传到github上"></a>如何将本地项目上传到github上</h4><center></center>]]></content>
     
     <summary type="html">
     
@@ -34,7 +34,7 @@
     
     </summary>
     
-      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+      <category term="github" scheme="http://yoursite.com/categories/github/"/>
     
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
