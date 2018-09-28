@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[my first blog]]></title>
+    <title><![CDATA[小程序实现批量删除，全选，取消全选功能的一些总结]]></title>
     <url>%2F2018%2F09%2F03%2Fmy-first-blog%2F</url>
-    <content type="text"><![CDATA[如何将本地项目上传到github上]]></content>
+    <content type="text"><![CDATA[&emsp;&emsp;最近有一个小程序需求是批量删除，全选和取消全选，这次记录一下这次遇到的问题。 &emsp;&emsp;一开始打算用小程序的组建checkbox实现的，但是之后发现checkbox的checked属性是单向绑定不支持双向绑定，我在实现全选和取消功能时候需要在js中更改checked的值，在文档中没有明确的说明checked是单向的，最后在社区的官方回答中找到了这个。自己回过头又仔细看了文档果然用了“设置默认选中”说明了，也有可能我太菜了所以没看出来，不管怎么样，最后我换成了view。 &emsp;&emsp;这次实现的逻辑： &emsp;&emsp;1. 点击编辑弹出全选+取消全选按钮，编辑按钮变成不可点击的删除按钮，同时每条记录前有选择按钮； &emsp;&emsp;2. 点击全选所有的选项都是选中状态，点击取消则全不选中； &emsp;&emsp;3. 单选时，没有选中的话就是点击就是选中，item.checked为true控制页面选中样式，反之item.checked= false时为取消选中状态； &emsp;&emsp;4. 如果全选状态下，列表中某一项取消选中，全选样式改变； &emsp;&emsp;5. 点击删除将选中记录的id数组传给后台进行删除。 &emsp;&emsp; js文件中data数据如下： 12345678910111213141516data: &#123; isFooter: false, doneHistory: true, flagHistory: true, hidden: false, icon: &quot;../../images/icon/Shape3.png&quot;, removeIndex: [], removeHistoryId: [], historyList: [], loading: false, isHeader: true, //选框状态 isClick: true, //删除按钮 isChoose: true, //是否选中 isChecked: false,//全选状态 deleteNum: &apos;&apos;, //删除个数&#125;, &emsp;&emsp; 在通过修改item.checked为true控制页面选中样式时，遇到了数组中的checked属性无法进行实时刷新，最后参考了一些文章找到了方法：12345var itemIndex = e.target.dataset.index;//当前点击的下标var newChecked = &apos;historyList[&apos; + itemIndex + &apos;].checked&apos;; //重点，拼成字符串 that.setData(&#123; [newChecked]: !that.data.historyList[itemIndex].checked //用中括号括起来即可 &#125;) 参考文档：https://blog.csdn.net/stp_zsj/article/details/81979669&emsp;&emsp; &emsp;&emsp;&ensp;https://www.cnblogs.com/simuhunluo/p/7989461.html&emsp;&emsp; 使用splice()通过删除被选中项的下标实现删除功能12345678910111213141516var _reIndex = that.data.removeIndex; for (var i = 0; i &lt; _reIndex.length;i++)&#123; var _index = _reIndex[i]; console.log(_index) that.data.historyList.splice(_index, 1); &#125; that.setData(&#123; historyList: that.data.historyList, isChoose: true, removeHistoryId: [], removeIndex: [], deleteNum: &apos;&apos;, isHeader: true, isClick: true, isDelete: true, &#125;); &emsp;&emsp;其他的都挺简单的，主要是自己的做的时候把自己绕晕了，还有就是光想是不够的还要动手实践了才行。最后放出丑丑效果图 —最后20：35了，赶紧跑……]]></content>
       <categories>
-        <category>github</category>
+        <category>小程序</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>github</tag>
-        <tag>blog</tag>
-        <tag>kido</tag>
+        <tag>小程序</tag>
       </tags>
   </entry>
 </search>
