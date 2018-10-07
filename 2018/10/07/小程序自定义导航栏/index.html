@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="kido">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;今天开始了新的小程序踩坑，有一个需求是顶部导航栏需要渐变色，但是小程序的navigationBarBackgroundColor属性只支持有效的颜色值，不支持linear-gradient,最后选择了自定义导航栏开发。&amp;emsp;&amp;emsp;要使用小程序的自定义导航栏只需要在app.json中配置        目前小程序不支持单个页面设置，所以一旦决定使用自定义导航看，那">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-07T11:48:19.362Z">
+<meta property="og:updated_time" content="2018-10-07T11:53:00.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序自定义顶部导航栏">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;今天开始了新的小程序踩坑，有一个需求是顶部导航栏需要渐变色，但是小程序的navigationBarBackgroundColor属性只支持有效的颜色值，不支持linear-gradient,最后选择了自定义导航栏开发。&amp;emsp;&amp;emsp;要使用小程序的自定义导航栏只需要在app.json中配置        目前小程序不支持单个页面设置，所以一旦决定使用自定义导航看，那">
@@ -421,8 +421,8 @@
 </li>
 <li>组件的方法列表<br>*/<br>methods: {<br>// 返回上一页面<br>_navback() {<br> wx.navigateBack()<br>},<br>//返回到首页<br>_backhome() {<br> wx.switchTab({<br>   url: ‘/pages/index/index’,<br> })<br>}<br>},<br>})</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;emsp;&amp;emsp;index.json文件:</span><br></pre></td></tr></table></figure>
-<p>{<br>  “component”: true,<br>  “usingComponents”: {}<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;emsp;&amp;emsp;app.js文件:</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&amp;emsp;&amp;emsp;index.json文件:</span><br></pre></td></tr></table></figure>
+<p>{<br>  “component”: true,<br>  “usingComponents”: {}<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&amp;emsp;&amp;emsp;app.js文件:</span><br></pre></td></tr></table></figure></p>
 <p>//app.js<br>const util = require(“utils/util.js”);</p>
 <p>App({<br>  url: “<a href="https://www.wkcq365.com/api&quot;" target="_blank" rel="noopener">https://www.wkcq365.com/api&quot;</a>,<br>  onLaunch: function (options) {<br>    var _this = this<br>    // 判断是否由分享进入小程序<br>    if (options.scene == 1007 || options.scene == 1008) {<br>      _this.globalData.share = true<br>    } else {<br>      _this.globalData.share = false<br>    };</p>
 <pre><code>wx.getSystemInfo({
