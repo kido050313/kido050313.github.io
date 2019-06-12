@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-07T09:37:57.318Z</updated>
+  <updated>2019-06-12T03:51:27.443Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新增gitignore文件，但是需要过滤文件已经提交到远程库，如何解决</title>
+    <link href="http://yoursite.com/2019/06/12/gitMind/"/>
+    <id>http://yoursite.com/2019/06/12/gitMind/</id>
+    <published>2019-06-12T01:59:06.000Z</published>
+    <updated>2019-06-12T03:51:27.443Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>&emsp;&emsp;git提交文件时，发现如node_modules等本应过滤的文件也上传到了github上，经检查发现是缺少了gitinore文件，但是此时已经git commit了，撤回commit命令如下：<br>&emsp;&emsp;<strong>git reset –soft HEAD^</strong><br>&emsp;&emsp;该命令仅撤回commit操作，其中HEAD^是指上一个版本，也可写作HEAD ~ 1,若commit了两次，可以使用HEAD~2。<br>&emsp;&emsp;记录以下几个参数：<br>&emsp;&emsp;<strong>–mixed</strong><br>&emsp;&emsp;不删除工作空间改动代码，撤销commit，并且撤销git add .操作。这个是默认参数，git reset –mixed HEAD^和git reset HEAD^效果一样。<br>&emsp;&emsp;<strong>–soft</strong><br>不删除工作空间改动代码，撤销commit，不撤销git add.<br>&emsp;&emsp;<strong>–hard</strong><br>删除工作空间改动代码，撤销commit,撤销git add .完成这个操作后，会恢复到上一次的commit状态。<br>&emsp;&emsp;如果只是想修改commit注释，可以使用：<br>&emsp;&emsp;<strong>git commit –amend</strong><br>进入默认vim编辑期，修改注释完毕后保存就好了。<br>&emsp;&emsp;添加了gitignore文件之后再重新上传，过滤文件已经提交到远程库了，为了避免冲突，首先同步远程仓库。<br>&emsp;&emsp;<strong>git pull</strong><br>然后删除本地项目目录下的缓存<br>&emsp;&emsp;<strong>git rm -r –cached .</strong><br>&emsp;&emsp;然后再按照正常步骤提交到远程仓库就行了。<br>&emsp;&emsp;提交的时候遇到了: “warning: LF will be replaced by CRLF”, 这是操作系统不同，换行符不同的原因，这里可以使用<br>&emsp;&emsp;<strong>git config core.autocrlf</strong><br>然后会有三个输出：true，false, input<br>我这里选了false.<br>具体的可以看这篇文章：<a href="https://blog.csdn.net/starry_night9280/article/details/53207928" target="_blank" rel="noopener">https://blog.csdn.net/starry_night9280/article/details/53207928</a></p><p>&emsp;&emsp; 最后push提交成功。</p><p>参考文章：<a href="https://www.cnblogs.com/lfxiao/p/9378763.html" target="_blank" rel="noopener">https://www.cnblogs.com/lfxiao/p/9378763.html</a><br>        <a href="https://www.cnblogs.com/guanghuiz/p/6579902.html" target="_blank" rel="noopener">https://www.cnblogs.com/guanghuiz/p/6579902.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="gitignore" scheme="http://yoursite.com/tags/gitignore/"/>
+    
+  </entry>
   
   <entry>
     <title>js中日期字符串的转换</title>

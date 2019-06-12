@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[新增gitignore文件，但是需要过滤文件已经提交到远程库，如何解决]]></title>
+    <url>%2F2019%2F06%2F12%2FgitMind%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;git提交文件时，发现如node_modules等本应过滤的文件也上传到了github上，经检查发现是缺少了gitinore文件，但是此时已经git commit了，撤回commit命令如下：&emsp;&emsp;git reset –soft HEAD^&emsp;&emsp;该命令仅撤回commit操作，其中HEAD^是指上一个版本，也可写作HEAD ~ 1,若commit了两次，可以使用HEAD~2。&emsp;&emsp;记录以下几个参数：&emsp;&emsp;–mixed&emsp;&emsp;不删除工作空间改动代码，撤销commit，并且撤销git add .操作。这个是默认参数，git reset –mixed HEAD^和git reset HEAD^效果一样。&emsp;&emsp;–soft不删除工作空间改动代码，撤销commit，不撤销git add.&emsp;&emsp;–hard删除工作空间改动代码，撤销commit,撤销git add .完成这个操作后，会恢复到上一次的commit状态。&emsp;&emsp;如果只是想修改commit注释，可以使用：&emsp;&emsp;git commit –amend进入默认vim编辑期，修改注释完毕后保存就好了。&emsp;&emsp;添加了gitignore文件之后再重新上传，过滤文件已经提交到远程库了，为了避免冲突，首先同步远程仓库。&emsp;&emsp;git pull然后删除本地项目目录下的缓存&emsp;&emsp;git rm -r –cached .&emsp;&emsp;然后再按照正常步骤提交到远程仓库就行了。&emsp;&emsp;提交的时候遇到了: “warning: LF will be replaced by CRLF”, 这是操作系统不同，换行符不同的原因，这里可以使用&emsp;&emsp;git config core.autocrlf然后会有三个输出：true，false, input我这里选了false.具体的可以看这篇文章：https://blog.csdn.net/starry_night9280/article/details/53207928 &emsp;&emsp; 最后push提交成功。 参考文章：https://www.cnblogs.com/lfxiao/p/9378763.html https://www.cnblogs.com/guanghuiz/p/6579902.html]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>gitignore</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[js中日期字符串的转换]]></title>
     <url>%2F2019%2F03%2F07%2Fjs%E4%B8%AD%E6%97%A5%E6%9C%9F%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%2F</url>
     <content type="text"><![CDATA[&emsp;&emsp;一些将日期格式进行转化的方法记录 一.字符串转日期&emsp;&emsp;将例如：2019-03-07 这种格式转为： 3月7日1234567891011121314151617function stringToDate(dateStr, separator) &#123; if(!separator) &#123; separator="-" &#125; var dateStr = dateStr.split(separator); var year = parseInt(dateStr[0]); var month; // 处理月份为03这种情况 if(dateStr[1].indexOf("0") == 0) &#123; month = parseInt(dateStr[1].substring(1)); &#125; else &#123; month = parseInt(dateStr[1]); &#125; var day = parseInt(dateStr[2]); var date = month + "月" + day + "日"; return date;&#125; 二. 时间戳转字符串&emsp;&emsp;如：1551949777658转成 2019-3-71234567function timesToString(timestamp) &#123; var _date = new Date(timestamp); // 根据时间戳生成的时间对象 var date = _date.getFullYear() + '-' + (_date.getMonth() + 1) + '-' + _date.getDate() return date;&#125; &emsp;&emsp;还有一些其他的转换没有接触到就不说了，总之就是利用js中的各种日期函数转和一些如分隔函数等方法灵活利用转换得到自己想要的格式。]]></content>
