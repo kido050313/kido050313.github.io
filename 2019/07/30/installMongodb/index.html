@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073104.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073105.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073106.png">
-<meta property="og:updated_time" content="2019-07-31T03:43:20.626Z">
+<meta property="og:updated_time" content="2019-07-31T03:55:03.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7.6系统下安装mongodb3.6">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;安装背景：阿里云服务器上的Centos7.6x64镜像，安装mongodb3.6版本的。试过了Yum方法，但是会有各种奇怪的错，最后在卸了装装了卸之后，选择了下载tgz包，然后上传到服务器进行解压安装。以下是辛酸的步骤。&amp;emsp;&amp;emsp;首先到mongodb官网下载mongodb3.6版本的安装包，你可以根据自己需要选择不同版本。&amp;emsp;&amp;emsp;下载完成后上传">
@@ -396,7 +396,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">832(字)</span>
+           <span class="post-count">858(字)</span>
            
          </span>
       
@@ -438,6 +438,7 @@
 <p><img src="/2019/07/30/installMongodb/2019073105.png" alt="mongodb文件"><br>&emsp;&emsp;**：touch是创建一个空白文件，以及设置文件的时间。<br>&emsp;&emsp;接下来修改mongodb.conf，添加以下内容，其中dbpath和logpath填写自己对应的自己文件路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">port=27017 #端口</span><br><span class="line">dbpath= /usr/mongodb/db #数据库存文件存放目录</span><br><span class="line">logpath= /usr/mongodb/log/mongodb.log #日志文件存放路径</span><br><span class="line">logappend=true #使用追加的方式写日志</span><br><span class="line">fork=true #以守护进程的方式运行，创建服务器进程</span><br><span class="line">maxConns=100 #最大同时连接数</span><br><span class="line">noauth=true #不启用验证</span><br><span class="line">journal=true #每次写入会记录一条操作日志（通过journal可以重新构造出写入的数据）。</span><br><span class="line">#即使宕机，启动时wiredtiger会先将数据恢复到最近一次的checkpoint点，然后重放后续的journal日志来恢复。</span><br><span class="line">storageEngine=wiredTiger  #存储引擎有mmapv1、wiretiger、mongorocks</span><br><span class="line">bind_ip = 0.0.0.0  #这样就可外部访问了，例如从win10中去连虚拟机中的MongoDB</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;因为有可能会有权限问题，所以给文件夹设置权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/mongodb</span><br><span class="line">chmod 777 db</span><br><span class="line">chmod 777 log</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;设置完成之后，进入/usr/mongodb 然后执行 ./bin/mongo即可启动。如下图：<br><img src="/2019/07/30/installMongodb/2019073106.png" alt="启动mongodb"><br>按照其他资料说的，其他的启动命令都无效，不知道是不是因为我是安装包安装的问题，以上也有可能部分的命令无用，做到目前这一步，mongodb可以启动。个中原因以后学习深入会继续记录，并且进行补充。目前仅对安装步骤进行记录，以后再次安装可以再看看。</p>
+<p>参考文章：<a href="https://blog.csdn.net/junshangshui/article/details/79371316" target="_blank" rel="noopener">https://blog.csdn.net/junshangshui/article/details/79371316</a><br>         <a href="https://www.jianshu.com/p/994bc7b19b26" target="_blank" rel="noopener">https://www.jianshu.com/p/994bc7b19b26</a><br>         <a href="https://blog.csdn.net/xiaoguang44/article/details/80326043" target="_blank" rel="noopener">https://blog.csdn.net/xiaoguang44/article/details/80326043</a></p>
 
       
     </div>
