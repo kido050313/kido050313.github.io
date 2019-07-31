@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[centos7.6系统下安装mongodb3.6]]></title>
+    <url>%2F2019%2F07%2F30%2FinstallMongodb%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;安装背景：阿里云服务器上的Centos7.6x64镜像，安装mongodb3.6版本的。试过了Yum方法，但是会有各种奇怪的错，最后在卸了装装了卸之后，选择了下载tgz包，然后上传到服务器进行解压安装。以下是辛酸的步骤。&emsp;&emsp;首先到mongodb官网下载mongodb3.6版本的安装包，你可以根据自己需要选择不同版本。&emsp;&emsp;下载完成后上传到centos上，我这里使用的是lrzsz上传压缩包，执行rz ,如果报错，先安装软件：yum -y install lrzsz。安装完成后 输入 rz 上传命令，出现弹窗，选择上传的文件。我选择将文件放在 /usr文件夹下&emsp;&emsp;上传成功后解压安装包，并且重命名解压的文件夹名12tar zxvf mongodb-linux-x86_64-3.6.13.tgzmv mongodb-linux-x86_64-3.6.13 mongodb &emsp;&emsp;cd mongodb进入文件夹可以看到里面的文件，如图所示&emsp;&emsp;配置环境变量,找到/etc下的proflie文件1vim /etc/profile &emsp;&emsp;在export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL这一行上面添加以下内容：12#Set Mongodbexport PATH=$PATH:/usr/mongodb/bin &emsp;&emsp;这里根据自己mongodb放置的路径写，不同的路径后面的文件路径也要对应更改。&emsp;&emsp;更改好之后退出返回系统根目录，然后通过更新配置文件使环境变量生效12cd ~source /etc/profile &emsp;&emsp;创建数据库目录,db 和log要记得创建，不要漏了，我因为漏了创建log启动报错了，创建的路径你可以根据自己放置的路径对应更改123456$ cd /usr/mongodb$ touch mongodb.conf$ mkdir db$ mkdir log$ cd log$ touch mongodb.log &emsp;&emsp;**：touch是创建一个空白文件，以及设置文件的时间。&emsp;&emsp;接下来修改mongodb.conf，添加以下内容，其中dbpath和logpath填写自己对应的自己文件路径。1234567891011port=27017 #端口dbpath= /usr/mongodb/db #数据库存文件存放目录logpath= /usr/mongodb/log/mongodb.log #日志文件存放路径logappend=true #使用追加的方式写日志fork=true #以守护进程的方式运行，创建服务器进程maxConns=100 #最大同时连接数noauth=true #不启用验证journal=true #每次写入会记录一条操作日志（通过journal可以重新构造出写入的数据）。#即使宕机，启动时wiredtiger会先将数据恢复到最近一次的checkpoint点，然后重放后续的journal日志来恢复。storageEngine=wiredTiger #存储引擎有mmapv1、wiretiger、mongorocksbind_ip = 0.0.0.0 #这样就可外部访问了，例如从win10中去连虚拟机中的MongoDB &emsp;&emsp;因为有可能会有权限问题，所以给文件夹设置权限123cd /usr/mongodbchmod 777 dbchmod 777 log &emsp;&emsp;设置完成之后，进入/usr/mongodb 然后执行 ./bin/mongo即可启动。如下图：按照其他资料说的，其他的启动命令都无效，不知道是不是因为我是安装包安装的问题，以上也有可能部分的命令无用，做到目前这一步，mongodb可以启动。个中原因以后学习深入会继续记录，并且进行补充。目前仅对安装步骤进行记录，以后再次安装可以再看看。]]></content>
+      <categories>
+        <category>服务器相关</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>mongodb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[新增gitignore文件，但是需要过滤文件已经提交到远程库，如何解决]]></title>
     <url>%2F2019%2F06%2F12%2FgitMind%2F</url>
     <content type="text"><![CDATA[&emsp;&emsp;git提交文件时，发现如node_modules等本应过滤的文件也上传到了github上，经检查发现是缺少了gitinore文件，但是此时已经git commit了，撤回commit命令如下：&emsp;&emsp;git reset –soft HEAD^&emsp;&emsp;该命令仅撤回commit操作，其中HEAD^是指上一个版本，也可写作HEAD ~ 1,若commit了两次，可以使用HEAD~2。&emsp;&emsp;记录以下几个参数：&emsp;&emsp;–mixed&emsp;&emsp;不删除工作空间改动代码，撤销commit，并且撤销git add .操作。这个是默认参数，git reset –mixed HEAD^和git reset HEAD^效果一样。&emsp;&emsp;–soft不删除工作空间改动代码，撤销commit，不撤销git add.&emsp;&emsp;–hard删除工作空间改动代码，撤销commit,撤销git add .完成这个操作后，会恢复到上一次的commit状态。&emsp;&emsp;如果只是想修改commit注释，可以使用：&emsp;&emsp;git commit –amend进入默认vim编辑期，修改注释完毕后保存就好了。&emsp;&emsp;添加了gitignore文件之后再重新上传，过滤文件已经提交到远程库了，为了避免冲突，首先同步远程仓库。&emsp;&emsp;git pull然后删除本地项目目录下的缓存&emsp;&emsp;git rm -r –cached .&emsp;&emsp;然后再按照正常步骤提交到远程仓库就行了。&emsp;&emsp;提交的时候遇到了: “warning: LF will be replaced by CRLF”, 这是操作系统不同，换行符不同的原因，这里可以使用&emsp;&emsp;git config core.autocrlf然后会有三个输出：true，false, input我这里选了false.具体的可以看这篇文章：https://blog.csdn.net/starry_night9280/article/details/53207928 &emsp;&emsp; 最后push提交成功。 参考文章：https://www.cnblogs.com/lfxiao/p/9378763.html https://www.cnblogs.com/guanghuiz/p/6579902.html]]></content>

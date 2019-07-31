@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="javascript,日期," />
+  <meta name="keywords" content="centos,mongodb," />
 
 
 
@@ -81,18 +81,25 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;一些将日期格式进行转化的方法记录  一.字符串转日期&amp;emsp;&amp;emsp;将例如：2019-03-07 这种格式转为： 3月7日1234567891011121314151617function stringToDate(dateStr, separator) &amp;#123;    if(!separator) &amp;#123;        separator=&quot;-&quot;">
-<meta name="keywords" content="javascript,日期">
+<meta name="description" content="&amp;emsp;&amp;emsp;安装背景：阿里云服务器上的Centos7.6x64镜像，安装mongodb3.6版本的。试过了Yum方法，但是会有各种奇怪的错，最后在卸了装装了卸之后，选择了下载tgz包，然后上传到服务器进行解压安装。以下是辛酸的步骤。&amp;emsp;&amp;emsp;首先到mongodb官网下载mongodb3.6版本的安装包，你可以根据自己需要选择不同版本。&amp;emsp;&amp;emsp;下载完成后上传">
+<meta name="keywords" content="centos,mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中日期字符串的转换">
-<meta property="og:url" content="http://yoursite.com/2019/03/07/js中日期与字符串相互转换/index.html">
+<meta property="og:title" content="centos7.6系统下安装mongodb3.6">
+<meta property="og:url" content="http://yoursite.com/2019/07/30/installMongodb/index.html">
 <meta property="og:site_name" content="kido">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;一些将日期格式进行转化的方法记录  一.字符串转日期&amp;emsp;&amp;emsp;将例如：2019-03-07 这种格式转为： 3月7日1234567891011121314151617function stringToDate(dateStr, separator) &amp;#123;    if(!separator) &amp;#123;        separator=&quot;-&quot;">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;安装背景：阿里云服务器上的Centos7.6x64镜像，安装mongodb3.6版本的。试过了Yum方法，但是会有各种奇怪的错，最后在卸了装装了卸之后，选择了下载tgz包，然后上传到服务器进行解压安装。以下是辛酸的步骤。&amp;emsp;&amp;emsp;首先到mongodb官网下载mongodb3.6版本的安装包，你可以根据自己需要选择不同版本。&amp;emsp;&amp;emsp;下载完成后上传">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-07T09:37:57.318Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/20197301.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073102.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073103.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073104.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073105.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/30/installMongodb/2019073106.png">
+<meta property="og:updated_time" content="2019-07-31T03:43:20.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中日期字符串的转换">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;一些将日期格式进行转化的方法记录  一.字符串转日期&amp;emsp;&amp;emsp;将例如：2019-03-07 这种格式转为： 3月7日1234567891011121314151617function stringToDate(dateStr, separator) &amp;#123;    if(!separator) &amp;#123;        separator=&quot;-&quot;">
+<meta name="twitter:title" content="centos7.6系统下安装mongodb3.6">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;安装背景：阿里云服务器上的Centos7.6x64镜像，安装mongodb3.6版本的。试过了Yum方法，但是会有各种奇怪的错，最后在卸了装装了卸之后，选择了下载tgz包，然后上传到服务器进行解压安装。以下是辛酸的步骤。&amp;emsp;&amp;emsp;首先到mongodb官网下载mongodb3.6版本的安装包，你可以根据自己需要选择不同版本。&amp;emsp;&amp;emsp;下载完成后上传">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/30/installMongodb/20197301.png">
 
 
 
@@ -122,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/07/js中日期与字符串相互转换/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/07/30/installMongodb/"/>
 
 
 
 
 
-  <title>js中日期字符串的转换 | kido</title>
+  <title>centos7.6系统下安装mongodb3.6 | kido</title>
   
 
 
@@ -302,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/js中日期与字符串相互转换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/installMongodb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kido">
@@ -319,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js中日期字符串的转换</h1>
+          <h1 class="post-title" itemprop="name headline">centos7.6系统下安装mongodb3.6</h1>
         
 
         <div class="post-meta">
@@ -331,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-07T16:39:42+08:00">
-                2019-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-30T21:47:12+08:00">
+                2019-07-30
               </time>
             
 
@@ -354,8 +361,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/服务器相关/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器相关</span>
                   </a>
                 </span>
 
@@ -372,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/07/js中日期与字符串相互转换/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/07/js中日期与字符串相互转换/" itemprop="commentCount"></span>
+                <a href="/2019/07/30/installMongodb/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/30/installMongodb/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,7 +396,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">219(字)</span>
+           <span class="post-count">832(字)</span>
            
          </span>
       
@@ -399,7 +406,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">阅读时长:</span>
-           <span class="post-count">1(分)</span>
+           <span class="post-count">3(分)</span>
            
         </span>
         <!-- 以上部分为：字数统计、阅读时长插入代码 -->
@@ -423,10 +430,14 @@
       
 
       
-        <p>&emsp;&emsp;一些将日期格式进行转化的方法记录 </p>
-<p><strong>一.字符串转日期</strong><br>&emsp;&emsp;将例如：2019-03-07 这种格式转为： 3月7日<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stringToDate</span>(<span class="params">dateStr, separator</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!separator) &#123;</span><br><span class="line">        separator=<span class="string">"-"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> dateStr = dateStr.split(separator);</span><br><span class="line">    <span class="keyword">var</span> year = <span class="built_in">parseInt</span>(dateStr[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">var</span> month;</span><br><span class="line">    <span class="comment">// 处理月份为03这种情况</span></span><br><span class="line">    <span class="keyword">if</span>(dateStr[<span class="number">1</span>].indexOf(<span class="string">"0"</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        month = <span class="built_in">parseInt</span>(dateStr[<span class="number">1</span>].substring(<span class="number">1</span>));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        month = <span class="built_in">parseInt</span>(dateStr[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> day = <span class="built_in">parseInt</span>(dateStr[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">var</span> date = month + <span class="string">"月"</span> + day + <span class="string">"日"</span>;</span><br><span class="line">    <span class="keyword">return</span> date;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>二. 时间戳转字符串</strong><br>&emsp;&emsp;如：1551949777658转成 2019-3-7<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timesToString</span>(<span class="params">timestamp</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _date = <span class="keyword">new</span> <span class="built_in">Date</span>(timestamp); <span class="comment">// 根据时间戳生成的时间对象</span></span><br><span class="line">  <span class="keyword">var</span> date = _date.getFullYear() + <span class="string">'-'</span> +</span><br><span class="line">            (_date.getMonth() + <span class="number">1</span>) + <span class="string">'-'</span> +</span><br><span class="line">            _date.getDate()</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;还有一些其他的转换没有接触到就不说了，总之就是利用js中的各种日期函数转和一些如分隔函数等方法灵活利用转换得到自己想要的格式。</p>
+        <p>&emsp;&emsp;安装背景：阿里云服务器上的Centos7.6x64镜像，安装mongodb3.6版本的。试过了Yum方法，但是会有各种奇怪的错，最后在卸了装装了卸之后，选择了下载tgz包，然后上传到服务器进行解压安装。以下是辛酸的步骤。<br>&emsp;&emsp;首先到mongodb官网下载mongodb3.6版本的安装包，你可以根据自己需要选择不同版本。<br><img src="/2019/07/30/installMongodb/20197301.png" alt="01"><br>&emsp;&emsp;下载完成后上传到centos上，我这里使用的是lrzsz上传压缩包，执行rz ,如果报错，先安装软件：yum -y install lrzsz。安装完成后 输入 rz 上传命令，出现弹窗，选择上传的文件。我选择将文件放在 /usr文件夹下<br><img src="/2019/07/30/installMongodb/2019073102.png" alt="上传压缩包"><br>&emsp;&emsp;上传成功后解压安装包，并且重命名解压的文件夹名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf mongodb-linux-x86_64-3.6.13.tgz</span><br><span class="line">mv mongodb-linux-x86_64-3.6.13 mongodb</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;cd mongodb进入文件夹可以看到里面的文件，如图所示<br><img src="/2019/07/30/installMongodb/2019073103.png" alt="文件夹目录"><br>&emsp;&emsp;配置环境变量,找到/etc下的proflie文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;在export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL<br>这一行上面添加以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#Set Mongodb</span><br><span class="line">export PATH=$PATH:/usr/mongodb/bin</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/07/30/installMongodb/2019073104.png" alt="profile"><br>&emsp;&emsp;这里根据自己mongodb放置的路径写，不同的路径后面的文件路径也要对应更改。<br>&emsp;&emsp;更改好之后退出返回系统根目录，然后通过更新配置文件使环境变量生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;创建数据库目录,db 和log要记得创建，不要漏了，我因为漏了创建log启动报错了，创建的路径你可以根据自己放置的路径对应更改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/mongodb</span><br><span class="line">$ touch mongodb.conf</span><br><span class="line">$ mkdir db</span><br><span class="line">$ mkdir log</span><br><span class="line">$ cd log</span><br><span class="line">$ touch mongodb.log</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/07/30/installMongodb/2019073105.png" alt="mongodb文件"><br>&emsp;&emsp;**：touch是创建一个空白文件，以及设置文件的时间。<br>&emsp;&emsp;接下来修改mongodb.conf，添加以下内容，其中dbpath和logpath填写自己对应的自己文件路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">port=27017 #端口</span><br><span class="line">dbpath= /usr/mongodb/db #数据库存文件存放目录</span><br><span class="line">logpath= /usr/mongodb/log/mongodb.log #日志文件存放路径</span><br><span class="line">logappend=true #使用追加的方式写日志</span><br><span class="line">fork=true #以守护进程的方式运行，创建服务器进程</span><br><span class="line">maxConns=100 #最大同时连接数</span><br><span class="line">noauth=true #不启用验证</span><br><span class="line">journal=true #每次写入会记录一条操作日志（通过journal可以重新构造出写入的数据）。</span><br><span class="line">#即使宕机，启动时wiredtiger会先将数据恢复到最近一次的checkpoint点，然后重放后续的journal日志来恢复。</span><br><span class="line">storageEngine=wiredTiger  #存储引擎有mmapv1、wiretiger、mongorocks</span><br><span class="line">bind_ip = 0.0.0.0  #这样就可外部访问了，例如从win10中去连虚拟机中的MongoDB</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;因为有可能会有权限问题，所以给文件夹设置权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/mongodb</span><br><span class="line">chmod 777 db</span><br><span class="line">chmod 777 log</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;设置完成之后，进入/usr/mongodb 然后执行 ./bin/mongo即可启动。如下图：<br><img src="/2019/07/30/installMongodb/2019073106.png" alt="启动mongodb"><br>按照其他资料说的，其他的启动命令都无效，不知道是不是因为我是安装包安装的问题，以上也有可能部分的命令无用，做到目前这一步，mongodb可以启动。个中原因以后学习深入会继续记录，并且进行补充。目前仅对安装步骤进行记录，以后再次安装可以再看看。</p>
 
       
     </div>
@@ -460,9 +471,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/"> <i class="fa fa-tag"></i> javascript</a>
+            <a href="/tags/centos/"> <i class="fa fa-tag"></i> centos</a>
           
-            <a href="/tags/日期/"> <i class="fa fa-tag"></i> 日期</a>
+            <a href="/tags/mongodb/"> <i class="fa fa-tag"></i> mongodb</a>
           
         </div>
       
@@ -475,18 +486,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/12/gitMind/" rel="prev" title="新增gitignore文件，但是需要过滤文件已经提交到远程库，如何解决">
-                <i class="fa fa-chevron-left"></i> 新增gitignore文件，但是需要过滤文件已经提交到远程库，如何解决
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/30/小程序组件弹窗内跳转如何实现/" rel="next" title="小程序组件弹窗内跳转如何实现">
-                小程序组件弹窗内跳转如何实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/12/gitMind/" rel="next" title="新增gitignore文件，但是需要过滤文件已经提交到远程库，如何解决">
+                新增gitignore文件，但是需要过滤文件已经提交到远程库，如何解决 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
